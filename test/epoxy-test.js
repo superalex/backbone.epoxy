@@ -373,11 +373,11 @@ describe("Backbone.Epoxy.View", function() {
 			lastName: "Skywalker",
 			preference: "b",
 			active: true,
-			valOptions: "1",
-			valDefault: "1",
-			valEmpty: "1",
-			valBoth: "1",
-			valMulti: "1",
+			valOptions: 1,
+			valDefault: 1,
+			valEmpty: 1,
+			valBoth: 1,
+			valMulti: 1,
 			valCollect: ""
 		},
 		

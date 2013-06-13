@@ -700,7 +700,17 @@
 				var optionsEmpty = readAccessor( self.e );
 				var optionsDefault = readAccessor( self.d );
 				var currentValue = readAccessor( self.v );
-				var selection = isArray(currentValue) ? currentValue : [ currentValue ];
+
+                //currentValue should work in the same way if its a number or a string
+                if (isArray(currentValue)){
+                    _.each(currentValue, function( value, index ) {
+                        currentValue[index] = value.toString();
+                    });
+                }else {
+                    currentValue = currentValue != null ? currentValue.toString(): null;
+                }
+
+                var selection = isArray(currentValue) ? currentValue : [ currentValue ];
 				var options = isCollection( value ) ? value.models : value;
 				var numOptions = options.length;
 				var enabled = true;
